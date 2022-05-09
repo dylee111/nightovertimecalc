@@ -10,7 +10,7 @@ import lombok.ToString;
 
 import javax.persistence.*;
 
-@Entity
+@Entity(name = "MEMBER")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @ToString
@@ -27,7 +27,7 @@ public class Member extends BaseEntity {
     @Column(name = "PASSWORD", nullable = false)
     private String password;
 
-    @Column(name = "name", nullable = false)
+    @Column(name = "NAME", nullable = false)
     private String name;
 
     @Column(name = "DIVISION")

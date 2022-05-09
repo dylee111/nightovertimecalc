@@ -8,7 +8,7 @@ import lombok.ToString;
 
 import javax.persistence.*;
 
-@Entity
+@Entity(name = "TAXI_MEAL_COST")
 @Getter
 @ToString
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -18,6 +18,10 @@ public class TaxiMealCost extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "COST_ID")
     private Long id;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "MEMBER_ID")
+    private Member member;
 
     @Column(name = "TAXI_COST")
     private int taxiCost;
