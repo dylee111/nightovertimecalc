@@ -1,11 +1,12 @@
 package com.nightovertime.nightovertimecalc.entity;
 
 import com.nightovertime.nightovertimecalc.entity.baseentity.BaseEntity;
+import com.nightovertime.nightovertimecalc.entity.info.Division;
+import com.nightovertime.nightovertimecalc.entity.info.Position;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
-import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 
 import javax.persistence.*;
 
@@ -30,9 +31,9 @@ public class Member extends BaseEntity {
     private String name;
 
     @Column(name = "DIVISION")
-    private String division;
+    private Division division;
 
     @Column(name = "POSITION")
-    private String position;
+    private Position position;
 
 }

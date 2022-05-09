@@ -19,6 +19,10 @@ public class TaxiMealCost extends BaseEntity {
     @Column(name = "COST_ID")
     private Long id;
 
-    private
+    @Column(name = "TAXI_COST")
+    private int taxiCost;
+
+    @Column(name = "MEAL_COST")
+    private int mealCost;
 
 }
