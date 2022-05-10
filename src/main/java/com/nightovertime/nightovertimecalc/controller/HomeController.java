@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Slf4j
 public class HomeController {
 
-    @GetMapping()
+    @GetMapping
     @ResponseBody
     public String index() {
         return "HOME";

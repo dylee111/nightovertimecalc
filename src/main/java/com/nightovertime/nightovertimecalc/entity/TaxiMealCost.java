@@ -29,4 +29,9 @@ public class TaxiMealCost extends BaseEntity {
     @Column(name = "MEAL_COST")
     private int mealCost;
 
+    public TaxiMealCost(Member member, int taxiCost, int mealCost) {
+        this.member = member;
+        this.taxiCost = taxiCost;
+        this.mealCost = mealCost;
+    }
 }
