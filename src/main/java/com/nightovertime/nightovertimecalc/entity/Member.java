@@ -9,7 +9,8 @@ import javax.persistence.*;
 
 import static javax.persistence.EnumType.*;
 
-@Entity(name = "MEMBER")
+@Entity
+@Table(name = "MEMBER")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @ToString // exclude 추가하기
@@ -30,7 +31,7 @@ public class Member extends BaseEntity {
     private String name;
 
     @Enumerated(STRING)
-    @Column(name = "DIVISION")
+    @Column(name = "DIVISION"
     private Division division;
 
     @Enumerated(STRING)

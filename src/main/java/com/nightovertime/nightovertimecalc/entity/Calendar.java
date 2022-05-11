@@ -9,6 +9,7 @@ import lombok.ToString;
 import javax.persistence.*;
 
 @Entity
+@Table(name = "CALENDAR")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
 @ToString
@@ -31,6 +32,7 @@ public class Calendar extends BaseEntity {
     @Column(name = "TOTAL_COST")
     private int totalCost;
 
+    @ToString.Exclude
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "MEMBER_ID")
     private Member member;
