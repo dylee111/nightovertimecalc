@@ -12,7 +12,7 @@ import static javax.persistence.EnumType.*;
 @Entity(name = "MEMBER")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
-@ToString
+@ToString // exclude 추가하기
 public class Member extends BaseEntity {
 
     @Id
