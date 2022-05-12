@@ -1,5 +1,6 @@
 package com.nightovertime.nightovertimecalc.entity;
 
+import com.nightovertime.nightovertimecalc.dto.CostDto;
 import com.nightovertime.nightovertimecalc.entity.baseentity.BaseEntity;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -20,7 +21,6 @@ public class TaxiMealCost extends BaseEntity {
     @Column(name = "COST_ID")
     private Long id;
 
-
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "MEMBER_ID")
     @ToString.Exclude
@@ -36,5 +36,12 @@ public class TaxiMealCost extends BaseEntity {
         this.member = member;
         this.taxiCost = taxiCost;
         this.mealCost = mealCost;
+    }
+
+    /*
+    * Member 택시비, 석식비 저장
+    * */
+    public static TaxiMealCost costSave(CostDto costDto) {
+        return new TaxiMealCost(costDto.getMember(), costDto.getTaxiCost(), costDto.getMealCost());
     }
 }

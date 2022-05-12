@@ -1,5 +1,6 @@
 package com.nightovertime.nightovertimecalc.entity;
 
+import com.nightovertime.nightovertimecalc.dto.MemberFormDto;
 import com.nightovertime.nightovertimecalc.entity.baseentity.BaseEntity;
 import com.nightovertime.nightovertimecalc.entity.info.Division;
 import com.nightovertime.nightovertimecalc.entity.info.Position;
@@ -31,7 +32,7 @@ public class Member extends BaseEntity {
     private String name;
 
     @Enumerated(STRING)
-    @Column(name = "DIVISION"
+    @Column(name = "DIVISION")
     private Division division;
 
     @Enumerated(STRING)
@@ -45,5 +46,18 @@ public class Member extends BaseEntity {
         this.name = name;
         this.division = division;
         this.position = position;
+    }
+
+    /*
+    * Member 저장
+    * */
+    public static Member joinMember(MemberFormDto memberFormDto) {
+        return Member.builder()
+                .employeeNo(memberFormDto.getEmployeeNo())
+                .password(memberFormDto.getPassword())
+                .name(memberFormDto.getName())
+                .division(memberFormDto.getDivision())
+                .position(memberFormDto.getPosition())
+                .build();
     }
 }
