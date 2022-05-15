@@ -13,4 +13,6 @@ public class CostDto {
     private int mealCost;
 
     private int taxiCost;
+
+    private int totalCost;
 }

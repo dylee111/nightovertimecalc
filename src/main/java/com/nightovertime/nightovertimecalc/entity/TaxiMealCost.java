@@ -32,16 +32,22 @@ public class TaxiMealCost extends BaseEntity {
     @Column(name = "MEAL_COST")
     private int mealCost;
 
-    public TaxiMealCost(Member member, int taxiCost, int mealCost) {
+    @Column(name = "TOTAL_COST")
+    private int totalCost;
+
+    public TaxiMealCost(Member member, int taxiCost, int mealCost, int totalCost) {
         this.member = member;
         this.taxiCost = taxiCost;
         this.mealCost = mealCost;
+        this.totalCost = taxiCost + mealCost;
     }
 
     /*
     * Member 택시비, 석식비 저장
     * */
     public static TaxiMealCost costSave(CostDto costDto) {
-        return new TaxiMealCost(costDto.getMember(), costDto.getTaxiCost(), costDto.getMealCost());
+        return new TaxiMealCost(costDto.getMember(), costDto.getTaxiCost(), costDto.getMealCost(), costDto.getTotalCost());
     }
+
+
 }
