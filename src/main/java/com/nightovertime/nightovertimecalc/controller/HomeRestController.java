@@ -14,7 +14,7 @@ public class HomeRestController {
 
     private final MemberService memberService;
 
-    @GetMapping
+    @GetMapping("/index")
     public String index() {
         return "HOME";
     }
