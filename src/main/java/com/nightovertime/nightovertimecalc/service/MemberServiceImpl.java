@@ -20,10 +20,10 @@ public class MemberServiceImpl implements MemberService {
         duplicateEmpNoCheck(memberFormDto.getEmployeeNo());
         memberRepository.save(Member.joinMember(memberFormDto));
     }
-
+    
     private void duplicateEmpNoCheck(Long employeeNo) {
         if (memberRepository.existsByEmployeeNo(employeeNo)) {
-            throw new DuplicateEmpNoException();
+            throw new DuplicateEmpNoException(employeeNo + " 중복되는 사번입니다.");
         }
     }
 

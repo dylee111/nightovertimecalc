@@ -49,5 +49,4 @@ public class TaxiMealCost extends BaseEntity {
         return new TaxiMealCost(costDto.getMember(), costDto.getTaxiCost(), costDto.getMealCost(), costDto.getTotalCost());
     }
 
-
 }
